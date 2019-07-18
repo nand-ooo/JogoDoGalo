@@ -1,3 +1,4 @@
+// classe responsavel pela grelha de jogo
 package jogoDoGalo;
 
 import java.awt.Graphics;
@@ -13,7 +14,7 @@ public class Grelha {
     private ImageIcon jogadaX = new ImageIcon("art/X.png");
     
     // Array que guarda as jogadas
-    // inicializado com um espaço em todas as posições
+    // inicializado com um espaÃ§o em todas as posiÃ§Ãµes
 	private char jogadas[][] = new char [3][3];
 	{
 		for( int x= 0; x < 3; x++ )
@@ -30,7 +31,7 @@ public class Grelha {
     	figura = fig;
     }    
     
-    // método que conforme o char no array de jogadas desenha a imagem correta na grelha
+    // mÃ©todo que conforme o char no array de jogadas desenha a imagem correta na grelha
     public void desenhar( Graphics g ) { 
     	figura.paintIcon( null, g, topo.x, topo.y );       	
     	    	
