@@ -19,7 +19,7 @@ public class JogoDoGalo extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private Grelha aGrelha = new Grelha( new ImageIcon("art/grelha.png"), new Point(0,0));
-	private char jogador = 'O';
+	private char jogador = 'X';
 	private int jogosEfetuados = 0;
 	private int vitoriasX = 0;
 	private int vitoriasO = 0;
@@ -96,6 +96,7 @@ public class JogoDoGalo extends JFrame {
 				int opcao;
 				// se o jogo terminou, aumenta contador conforme resultado, imprime resultado e dá opção para jogar de novo ou sair
 				if(estado != 'C') {
+					jogador = 'X';			// primeiro a jogar sempre X
 					++jogosEfetuados;
 					String fim;
 					if(estado == 'E') {
