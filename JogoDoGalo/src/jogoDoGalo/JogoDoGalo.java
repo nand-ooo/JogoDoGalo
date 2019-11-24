@@ -2,19 +2,26 @@ package jogoDoGalo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+
+
+
 public class JogoDoGalo extends JFrame {	
+
+	final int WINDOW_WIDTH = 540;
+	final int WINDOW_HEIGHT = 340;
 
 	private static final long serialVersionUID = 1L;
 	
@@ -30,9 +37,14 @@ public class JogoDoGalo extends JFrame {
 
 	public JogoDoGalo(){
 		super( "Jogo do Galo" ); // título da janela
-		setSize( 540, 340 );
+		setSize( WINDOW_WIDTH, WINDOW_HEIGHT );
 		setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE ); // desliga programa quando fechas janela	
 		
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();		
+		
+		setLocation((int)width / 2 - WINDOW_WIDTH / 2, (int)height / 2 - WINDOW_HEIGHT / 2);
 		PainelDesenho painel = new PainelDesenho( );			
 		painel.setBackground( Color.DARK_GRAY );			
 		getContentPane().add( painel, BorderLayout.CENTER );
